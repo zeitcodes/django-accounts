@@ -8,12 +8,21 @@ Installation
 
 Run `pip install hg+https://bitbucket.org/nextscreenlabs/django-accounts`
 
-Add `form_extensions` to your `INSTALLED_APPS` setting:
+Add `accounts` to your `INSTALLED_APPS` setting:
 
 ```python
 INSTALLED_APPS = (
     ...
-    'form_extensions',
+    'accounts',
+)
+```
+
+To your sites `url.py` add:
+
+```python
+urlpatterns = patterns('',
+    ...
+    url(r'^accounts/', include('accounts.urls')),
 )
 ```
 
