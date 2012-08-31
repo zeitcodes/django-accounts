@@ -13,7 +13,7 @@ Add `form_extensions` to your `INSTALLED_APPS` setting:
 ```python
 INSTALLED_APPS = (
     ...
-    'accounts',
+    'form_extensions',
 )
 ```
 
