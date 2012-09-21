@@ -20,8 +20,14 @@ class UserForm(forms.ModelForm):
         password2 = cleaned_data.get('password2')
         if password != password2:
             self._errors['password'] = self.error_class([u'Passwords do not match.'])
-            del cleaned_data['password']
-            del cleaned_data['password2']
+            try:
+                del cleaned_data['password']
+            except KeyError:
+                pass
+            try:
+                del cleaned_data['password2']
+            except KeyError:
+                pass
         return cleaned_data
 
     def save(self, *args, **kwargs):
