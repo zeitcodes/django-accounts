@@ -91,7 +91,7 @@ class PasswordResetConfirm(FormView):
     form_class = SetPasswordForm
     token_generator = default_token_generator
     template_name = 'accounts/password_reset_confirm.html'
-    success_url = reverse_lazy('')
+    success_url = reverse_lazy('home')
 
     def get_user(self, uid=None):
         if not hasattr(self, '_user'):
@@ -100,7 +100,7 @@ class PasswordResetConfirm(FormView):
                 uid = base36_to_int(uidb36)
             try:
                 self._user = User.objects.get(pk=uid)
-            except User.DoesNotExsit:
+            except User.DoesNotExist:
                 self._user = None
         return self._user
 
