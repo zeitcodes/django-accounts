@@ -68,7 +68,7 @@ class AccountsTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_accounts_profile_logged_out(self):
-            url = reverse('accounts_profile')
+        url = reverse('accounts_profile')
         response = self.client.get(url)
         # Redirects to login page because client was not logged in.
         self.assertEqual(response.status_code, 302)

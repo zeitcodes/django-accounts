@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82cf6ed7-4b1b-4bcb-9ca6-9ab3ddead4ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/django-accounts.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/django-accounts.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sass_stdlib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/testrunner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/accounts/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/templates/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/templates/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/testsite/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/views.py" afterPath="$PROJECT_DIR$/accounts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/testsite/settings.py" afterPath="$PROJECT_DIR$/tests/testsite/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/testsite/urls.py" afterPath="$PROJECT_DIR$/tests/testsite/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/tests.py" afterPath="$PROJECT_DIR$/accounts/tests.py" />
     </list>
     <ignored path="django-accounts.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +27,7 @@
           <file leaf-file-name="tests.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/accounts/tests.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="69" column="4" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.7766323">
+                <state line="80" column="51" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.8969072">
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
                   </folding>
@@ -543,7 +524,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="4" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.7766323">
+        <state line="80" column="51" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.8969072">
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
