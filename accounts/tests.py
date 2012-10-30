@@ -78,4 +78,5 @@ class AccountsTest(TestCase):
         profile_client.login(username='mely', password='123')
         url = reverse('accounts_profile')
         response = profile_client.get(url)
+        # Should stay on same page because client is logged in.
         self.assertEqual(response.status_code, 200)

@@ -27,7 +27,7 @@
           <file leaf-file-name="tests.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/accounts/tests.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="80" column="51" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.8969072">
+                <state line="81" column="51" selection-start="3081" selection-end="3081" vertical-scroll-proportion="0.9140893">
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
                   </folding>
@@ -524,7 +524,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="51" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.8969072">
+        <state line="81" column="51" selection-start="3081" selection-end="3081" vertical-scroll-proportion="0.9140893">
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
