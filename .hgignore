@@ -12,3 +12,4 @@ syntax: glob
 *.tox
 *.egg-info
 Thumbs.db
+.idea*
