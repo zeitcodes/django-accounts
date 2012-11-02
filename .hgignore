@@ -7,9 +7,14 @@ syntax: glob
 *.DS_Store
 *.log
 *.cache
-.svn*
-.git*
-*.tox
 *.egg-info
 Thumbs.db
-.idea*
+
+syntax: regexp
+
+^.svn/
+^.git/
+^.idea/
+^build/
+^dist/
+^.tox/
