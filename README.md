@@ -6,7 +6,7 @@ Django Accounts re-implements several views from Django contrib auth to use the 
 Installation
 ------------
 
-Run `pip install hg+https://bitbucket.org/nextscreenlabs/django-accounts`
+Run `pip install django-accounts-cbv`
 
 Add `accounts` to your `INSTALLED_APPS` setting:
 
