@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load url from future %}
+
 {% block title %}
     Login | {{block.super}}
 {% endblock %}
@@ -15,5 +17,5 @@
         </table>
         <input class="btn" type="submit" value="Login" />
     </form>
-    <p><a href="{% url auth_password_reset %}" >Forgot your password?</a></p>
+    <p><a href="{% url 'auth_password_reset' %}" >Forgot your password?</a></p>
 {% endblock %}
