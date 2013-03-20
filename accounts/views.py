@@ -1,21 +1,21 @@
-from django.http import Http404
-from django.views.generic.edit import FormView, UpdateView
-from django.views.generic.base import RedirectView
-from django.core.urlresolvers import reverse_lazy
+from .forms import UserForm
+from django.conf import settings
 from django.contrib import messages
-from django.views.decorators.debug import sensitive_post_parameters
+from django.contrib.auth import REDIRECT_FIELD_NAME, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm, SetPasswordForm
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse_lazy
+from django.http import Http404
+from django.utils.decorators import method_decorator
+from django.utils.http import base36_to_int
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-from django.contrib.auth import REDIRECT_FIELD_NAME, login, logout
-from django.contrib.auth.tokens import default_token_generator
-from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm, SetPasswordForm
-from accounts.forms import UserForm
-from django.contrib.auth.models import User
+#from django.views.decorators.debug import sensitive_post_parameters
+from django.views.generic.base import RedirectView
+from django.views.generic.edit import FormView, UpdateView
 import urlparse
-from django.utils.http import base36_to_int
-from django.conf import settings
 
 
 class Login(FormView):
