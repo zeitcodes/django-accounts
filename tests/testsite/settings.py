@@ -27,6 +27,8 @@ USE_I18N = False
 USE_L10N = True
 USE_TZ = True
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
 MEDIA_ROOT = os.path.join(DIRNAME, 'media/')
 MEDIA_URL = '/media/'
 

@@ -41,6 +41,21 @@ AUTHENTICATION_BACKENDS = (
 )
 ```
 
+Middlewares
+-----------
+
+###LoginRequiredMiddleware
+Require authentication for all views.
+
+To enable it add `'accounts.middleware.LoginRequiredMiddleware'` to your `MIDDLEWARE_CLASSES` setting:
+
+```python
+MIDDLEWARE_CLASSES = (
+	...,
+	'accounts.middleware.LoginRequiredMiddleware',
+)
+```
+
 Views
 -----
 

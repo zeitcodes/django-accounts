@@ -1,5 +1,9 @@
 from django.contrib.auth.backends import ModelBackend
-from django.contrib.auth.models import User
+try:
+    from django.contrib.auth import get_user_model
+except ImportError:
+    from django.contrib.auth.models import User
+    get_user_model = lambda: User
 import re
 
 
@@ -10,13 +14,15 @@ email_re = re.compile(
 
 
 class EmailBackend(ModelBackend):
+    UserModel = get_user_model()
+
     """Authenticate using email only"""
     def authenticate(self, username=None, password=None):
         if email_re.search(username):
             try:
-                user = User.objects.get(email=username)
+                user = self.UserModel.objects.get(email=username)
                 if user.check_password(password):
                     return user
-            except User.DoesNotExist:
+            except self.UserModel.DoesNotExist:
                 pass
         return None
