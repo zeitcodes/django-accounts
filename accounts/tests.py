@@ -29,7 +29,7 @@ class AccountsTest(TestCase):
     def test_logout_view(self):
         url = reverse('auth_logout')
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 301) # 301 Moved Permanently
+        self.assertEqual(response.status_code, 302)
 
     def test_password_reset_view(self):
         url = reverse('auth_password_reset')
@@ -41,7 +41,11 @@ class AccountsTest(TestCase):
         token = generator.make_token(self.user)
         uid = urlsafe_base64_encode(force_bytes(self.user.pk))
         url = reverse('auth_password_reset_confirm', args=[uid, token])
-        response = self.client.get(url)
+        data = {
+            'new_password1': '123',
+            'new_password2': '123',
+        }
+        response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
     def test_accounts_profile_logged_out(self):

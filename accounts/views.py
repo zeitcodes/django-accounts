@@ -9,7 +9,8 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse_lazy
 from django.http import Http404
 from django.utils.decorators import method_decorator
-from django.utils.http import base36_to_int
+from django.utils.encoding import force_text
+from django.utils.http import urlsafe_base64_decode
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 #from django.views.decorators.debug import sensitive_post_parameters
@@ -24,7 +25,7 @@ class Login(FormView):
     template_name = 'accounts/login.html'
 
     def get_success_url(self):
-        redirect_to = self.request.REQUEST.get(self.redirect_field_name, '')
+        redirect_to = self.request.GET.get(self.redirect_field_name, '')
         netloc = urlparse.urlparse(redirect_to)[1]
         if not redirect_to:
             redirect_to = settings.LOGIN_REDIRECT_URL
@@ -50,7 +51,7 @@ class Logout(RedirectView):
     redirect_field_name = REDIRECT_FIELD_NAME
 
     def get_redirect_url(self):
-        redirect_to = self.request.REQUEST.get(self.redirect_field_name, '')
+        redirect_to = self.request.GET.get(self.redirect_field_name, '')
         if redirect_to:
             netloc = urlparse.urlparse(redirect_to)[1]
             if netloc and netloc != self.request.get_host():
@@ -96,8 +97,8 @@ class PasswordResetConfirm(FormView):
     def get_user(self, uid=None):
         if not hasattr(self, '_user'):
             if uid is None:
-                uidb36 = self.kwargs.get('uidb36', 0)
-                uid = base36_to_int(uidb36)
+                uidb64 = self.kwargs.get('uidb64', 0)
+                uid = force_text(urlsafe_base64_decode(uidb64))
             try:
                 self._user = User.objects.get(pk=uid)
             except User.DoesNotExist:
@@ -117,8 +118,8 @@ class PasswordResetConfirm(FormView):
     #@method_decorator(sensitive_post_parameters())
     @method_decorator(never_cache)
     def dispatch(self, *args, **kwargs):
-        uidb36 = kwargs.get('uidb36', 0)
-        uid = base36_to_int(uidb36)
+        uidb64 = kwargs.get('uidb64', 0)
+        uid = force_text(urlsafe_base64_decode(uidb64))
         user = self.get_user(uid)
         token = kwargs.get('token', '')
         if self.token_generator.check_token(user, token):
